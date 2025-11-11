@@ -47,7 +47,6 @@ function App() {
 
   return (
     <>
-      {/* Navbar ko 'handleToggle' prop pass karein */}
       <Navbar handleToggle={handleToggle} />
 
       <main>
