@@ -26,7 +26,7 @@ const projectsData = [
   {
     id: 2,
     title: "React Tic Tac Toe Game",
-    image: "/Images/TicToeGame.png", // Yahan apne screenshot ka naam daalein
+    image: "/Images/tic-tac-toe.png", // Yahan apne screenshot ka naam daalein
     description:
       "A classic Tic Tac Toe game built using React logic (useState) in a single HTML file, demonstrating core state management concepts.",
     githubLink: "https://github.com/Jaswant1213/tic-toe-game", // Yahan apna GitHub link daalein
@@ -35,7 +35,7 @@ const projectsData = [
   {
     id: 3,
     title: "My Personal Portfolio",
-    image: "/Images/portfolio-screenshot.png", // Apni portfolio ka screenshot le kar yahan daalein
+    image: "/Images/my-portfolio.png", // Apni portfolio ka screenshot le kar yahan daalein
     description:
       "My responsive, multi-page personal portfolio built from scratch using React, React Router, and deployed on Netlify with CI/CD.",
     githubLink: "https://github.com/Jaswant1213/my-portfolio-react", // Portfolio ka GitHub link
