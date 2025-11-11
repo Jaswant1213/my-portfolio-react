@@ -14,7 +14,7 @@ body {
 
 main {
   /* Ye zaroori hai taake content navbar ke neeche se shuru ho */
-  padding-top: 60px; 
+  padding-top: 60px;
 }
 
 /* === HEADER (HOME PAGE) === */
@@ -126,18 +126,44 @@ section#projects {
   font-size: 0.9rem;
   margin-bottom: 15px;
   flex-grow: 1;
+  /* Ye description ko push karega */
 }
 
-.project-card a {
+/* --- Project Card Links Styling (YE THA FIX) --- */
+.project-links {
+  display: flex;
+  justify-content: space-between;
+  /* Buttons ko kono mein bhej dega */
+  gap: 15px;
+  /* Thoda sa gap */
+  margin-top: auto;
+  /* Buttons ko card ke neeche push karega */
+  padding-top: 10px;
+  /* Description se space */
+}
+
+.project-btn {
+  flex: 1;
+  /* Dono buttons ko barabar space dega */
   text-decoration: none;
   color: #fff;
   background-color: #4b6cb7;
   padding: 8px 15px;
-  margin-top: 10px;
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
+  transition: background-color 0.3s;
 }
+
+.project-btn.live {
+  background-color: #2a9d8f;
+  /* Live demo button ka alag color */
+}
+
+.project-btn:hover {
+  opacity: 0.9;
+}
+
 
 /* === CONTACT FORM === */
 #contact {
@@ -209,8 +235,10 @@ footer ul {
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
-  display: flex; /* Links ko horizontal karein */
-  gap: 20px; /* Links ke beech space */
+  display: flex;
+  /* Links ko horizontal karein */
+  gap: 20px;
+  /* Links ke beech space */
 }
 
 footer ul li a {
@@ -281,9 +309,15 @@ body.dark-mode .project-card h4 {
   color: #61dafb;
 }
 
-body.dark-mode .project-card a {
-   background-color: #61dafb;
-   color: #182848;
+/* Dark mode ke liye naye button styles */
+body.dark-mode .project-btn {
+  background-color: #61dafb;
+  color: #182848;
+}
+
+body.dark-mode .project-btn.live {
+  background-color: #2a9d8f;
+  color: #fff;
 }
 
 body.dark-mode #contact {
@@ -313,6 +347,7 @@ body.dark-mode footer {
 body.dark-mode footer ul li a {
   color: #61dafb;
 }
+
 body.dark-mode footer ul li a:hover {
   color: #fff;
 }
@@ -341,7 +376,8 @@ body.dark-mode #theme-toggle:hover {
   background-color: #fff;
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: fixed; /* 'sticky' ke bajaye 'fixed' taake hamesha top par rahe */
+  position: fixed;
+  /* 'sticky' ke bajaye 'fixed' taake hamesha top par rahe */
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -358,7 +394,8 @@ body.dark-mode #theme-toggle:hover {
   display: flex;
   list-style: none;
   gap: 2rem;
-  align-items: center; /* Toggle button ko align karne ke liye */
+  align-items: center;
+  /* Toggle button ko align karne ke liye */
 }
 
 .nav-links a {
@@ -395,15 +432,19 @@ body.dark-mode .navbar {
   background-color: #2c2c2c;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }
+
 body.dark-mode .nav-brand a {
   color: #f0f2f5;
 }
+
 body.dark-mode .nav-links a {
   color: #f0f2f5;
 }
+
 body.dark-mode .nav-links a:hover {
   color: #61dafb;
 }
+
 body.dark-mode .hamburger .bar {
   background-color: #f0f2f5;
 }
@@ -412,15 +453,16 @@ body.dark-mode .hamburger .bar {
 /* === MEDIA QUERY (Mobile View) === */
 @media (max-width: 768px) {
   main {
-    padding-top: 55px; /* Navbar ki height kam ki hai */
+    padding-top: 55px;
+    /* Navbar ki height kam ki hai */
   }
 
   .navbar {
     padding: 0.8rem 1.5rem;
   }
-  
+
   .nav-brand {
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
   /* Hamburger ko dikhao */
@@ -430,23 +472,27 @@ body.dark-mode .hamburger .bar {
 
   /* Links ko chupa do */
   .nav-links {
-    flex-direction: column; 
-    width: 100%; 
-    height: 0; /* Isse chupa hua hai */
-    overflow: hidden; 
+    flex-direction: column;
+    width: 100%;
+    height: 0;
+    /* Isse chupa hua hai */
+    overflow: hidden;
     transition: height 0.3s ease-in-out;
-    background-color: #fff; 
-    position: absolute; /* Navbar ke neeche */
-    top: 55px; /* Navbar ki height */
+    background-color: #fff;
+    position: absolute;
+    /* Navbar ke neeche */
+    top: 55px;
+    /* Navbar ki height */
     left: 0;
-    padding: 0; 
-    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    padding: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   }
 
   /* Jab 'open' class lage toh dikhao */
   .nav-links.open {
-    height: auto; /* Height auto kardo */
-    padding: 1rem 0; 
+    height: auto;
+    /* Height auto kardo */
+    padding: 1rem 0;
   }
 
   .nav-links li {
@@ -457,31 +503,34 @@ body.dark-mode .hamburger .bar {
 
   .nav-links li a {
     font-size: 1.1rem;
-    padding: 0.8rem 1rem; 
-    display: block; 
+    padding: 0.8rem 1rem;
+    display: block;
   }
-  
+
   .navbar-toggle-btn #theme-toggle {
-    width: calc(100% - 2rem); 
-    margin: 0 1rem; 
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
   }
 
   /* Dark mode for mobile menu */
   body.dark-mode .nav-links {
     background-color: #2c2c2c;
   }
-  
+
   /* Media query ke andar responsive font sizes */
   header h1 {
     font-size: 2.5rem;
   }
+
   header h2 {
     font-size: 1.2rem;
   }
+
   section {
     margin: 20px;
     padding: 20px;
   }
+
   section h3 {
     font-size: 1.5rem;
   }
